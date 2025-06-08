@@ -4,15 +4,15 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: petejohanson
       url-base: https://github.com/petejohanson
-    - name: mctechnology17
-      url-base: https://github.com/mctechnology17
+    - name: zzuse
+      url-base: https://github.com/zzuse
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: zmk-nice-oled
-      remote: mctechnology17
+    - name: zmk-nice-oled-zz
+      remote: zzuse
       revision: main
   self:
     path: config
