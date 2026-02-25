@@ -1,10 +1,36 @@
 name: Build ZMK firmware
+
 on:
   workflow_dispatch:
   push:
-    paths:
-      - "config/**"
+    branches:
+      - "**"
+    tags:
+      - "v*"
 
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+
+  publish:
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Download firmware
+        uses: actions/download-artifact@v4
+        with:
+          name: firmware
+          path: firmware
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            firmware/**/*.uf2
+            firmware/**/*.bin
+            firmware/**/*.hex
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
