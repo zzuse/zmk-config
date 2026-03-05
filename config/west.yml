@@ -13,6 +13,6 @@ manifest:
       import: app/west.yml
     - name: zmk-nice-oled-zz
       remote: zzuse
-      revision: migrate-lvgl9-vertical
+      revision: main
   self:
     path: config
