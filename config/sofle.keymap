@@ -30,7 +30,7 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "default";
+            display-name = "BASE";
 // ----------------------------------------------------                   --------------------------------------------------------
 // |  ESC  |  1  |  2  |  3   |  4   |  5   |                                      |  6   |  7    |  8    |  9   |   0   | BKSPC |
 // |   `   |  Q  |  W  |  E   |  R   |  T   |                                      |  Y   |  U    |  I    |  O   |   P   | LAYER?|
@@ -49,7 +49,7 @@
         };
 
         lower_layer {
-            display-name = "lower";
+            display-name = "LOWR";
 // TODO: Some binds are waiting for shifted keycode support.
 // ----------------------------------------------------                     --------------------------------------------------------
 // |  F12  |  F1 |  F2 |  F3  |  F4  |  F5  |                                        |  F6  |  F7   |  F8   |  F9  |  F10  |  F11  |
@@ -69,7 +69,7 @@
         };
 
         raise_layer {
-            display-name = "raise";
+            display-name = "RAIS";
 // ------------------------------------------------------                                    ------------------------------------------------------
 // |       |      |      |       |       |      |                                                    |      |      |       |      |       |       |
 // |       |      |   W  |       |       |      |                                                    | PGUP |      |   ^   |      |       |       |
@@ -94,7 +94,7 @@
 // |        | RGB_BRD | RGB_BRI |         |         |         |                                                            |      |      |       |      |       |       |
 // |        |         |         |         |         |         | RGB_TOG |                                           |      |      |      |       |      |       |       |
 //                    |         |         |         |         |         |                                           |      |      |      |       |      |
-            display-name = "adjust";
+            display-name = "HIGH";
             bindings = <
 &bt BT_CLR        &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                                   &none &none &none &none &none &none
 &ext_power EP_TOG &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_EFF                                &none &none &none &none &none &none
