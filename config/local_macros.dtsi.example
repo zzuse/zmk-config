@@ -1,0 +1,9 @@
+// Copy to local_macros.dtsi (gitignored) and fill in your private macros.
+hello_macro: hello_macro {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    wait-ms = <10>;
+    tap-ms = <10>;
+
+    bindings = <&macro_tap &kp H &kp E &kp L &kp L &kp O>;
+};
