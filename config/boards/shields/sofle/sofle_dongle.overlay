@@ -1,0 +1,45 @@
+/*
+ * Sofle dongle: nice!nano v2 central with a 1.3" SH1106 128x64 OLED.
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "sofle.dtsi"
+
+/ {
+    chosen {
+        zmk,kscan = &mock_kscan;
+    };
+
+    mock_kscan: kscan_mock {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
+};
+
+// No switches or RGB strip on the dongle
+&layout_0 {
+    kscan = <&mock_kscan>;
+};
+
+&kscan0 {
+    status = "disabled";
+};
+
+&spi3 {
+    status = "disabled";
+};
+
+&pro_micro_i2c {
+    clock-frequency = <400000>;
+};
+
+&oled {
+    compatible = "sinowealth,sh1106";
+    height = <64>;
+    multiplex-ratio = <63>;
+    segment-offset = <2>;
+    /delete-property/ com-sequential;
+};
