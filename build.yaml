@@ -26,5 +26,7 @@ include:
   # ---- Same firmware for both setups ----
   - board: nice_nano//zmk
     shield: sofle_right nice_oled
+    artifact-name: sofle_right
   - board: nice_nano//zmk
     shield: settings_reset
+    artifact-name: settings_reset
