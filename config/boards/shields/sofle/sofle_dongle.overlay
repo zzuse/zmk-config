@@ -42,4 +42,7 @@
     multiplex-ratio = <63>;
     segment-offset = <2>;
     /delete-property/ com-sequential;
+    // Rotate 180 degrees relative to the halves' orientation
+    /delete-property/ segment-remap;
+    /delete-property/ com-invdir;
 };
